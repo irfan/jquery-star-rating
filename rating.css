@@ -1,0 +1,26 @@
+.star{
+	background-image:url('stars.png');
+	background-position:left top;
+	display:block;
+	width:20px;
+	height:15px;
+	float:left;
+	cursor: pointer;
+	zoom:1;
+}
+
+.fullStar{
+	background-position:left -15px;
+}
+
+.stars{
+	overflow: hidden;
+}
+
+.tmp_es{
+	background-position:left -30px;
+}
+
+.tmp_fs{
+	background-position:left -40px;
+}
