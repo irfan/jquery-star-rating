@@ -1,6 +1,6 @@
 # Example usage
 
-$('.ratingContainer').rating({}, function(event){
+$('.container').rating({}, function(event){
 	// console.log(event);
 });
 
