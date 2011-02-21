@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>rating test</title>
+	<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="../rating.js"></script>
+	<link rel="stylesheet" href="../rating.css" type="text/css" media="screen" title="Rating CSS" charset="utf-8" />
+	
+	<script type="text/javascript" charset="utf-8">
+	    $(function(){
+	        $('.container').rating();
+	    });
+	</script>
+</head>
+
+<body>
+    <h1>jQuery Rating Plugin</h1>
+    
+    <div class="container">
+    	<input type="radio" name="example" class="rating" value="1" />
+    	<input type="radio" name="example" class="rating" value="2" />
+    	<input type="radio" name="example" class="rating" value="3" />
+    	<input type="radio" name="example" class="rating" value="4" />
+    	<input type="radio" name="example" class="rating" value="5" />
+    </div>
+        
+    <h2>Example Usage</h2>
+    <p>
+        <h3>JavaScript - Simple usage</h3>
+        <pre>
+        &lt;script&gt;
+            $('.container').rating();
+        &lt;/script&gt;
+        </pre>
+        <h3>JavaScript - Using with callback method</h3>
+        <pre>
+            &lt;script&gt;
+            $('.container').rating({}, function(event){
+            	// console.log(event);
+            });
+            &lt;/script&gt;
+        </pre>
+        <h3>Html</h3>
+        <pre>
+        &lt;div class="container"&gt;
+        	&lt;input type="radio" name="example" class="rating" value="1" /&gt;
+        	&lt;input type="radio" name="example" class="rating" value="2" /&gt;
+        	&lt;input type="radio" name="example" class="rating" value="3" /&gt;
+        	&lt;input type="radio" name="example" class="rating" value="4" /&gt;
+        	&lt;input type="radio" name="example" class="rating" value="5" /&gt;
+        &lt;/div&gt;
+            
+        </pre>
+    </p>
+</body>
+</html>
