@@ -1,28 +1,17 @@
 /*
 *  @Name 		jQuery Rating Plugin
-*  @Version 	0.1.1-beta
+*  @Version 	0.1-beta
 *  @Author 		Irfan Durmus
 */
 
 (function($){
-	$.fn.rating = function(uo, callback){
-	    
-	    if (!callback) {
-		    callback = function(){};
-		}
+	
+	$.fn.rating = function(uo, handler){
 		
-	    if (typeof uo === 'function') {
-	        callback = uo;
-	    }
-	    
-		if (!uo || typeof uo !== 'object') {
-		    uo = {};
-		}
-		
-		uo.callback = callback;
+		uo.callback = handler;
 				
 		// each for all item
-		this.each(function(i, v){
+		$.each($(this), function(i, v){
 			
 			// if UserOptions.callback undefined...
 			if (!uo.callback) {

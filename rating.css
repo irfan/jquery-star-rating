@@ -1,17 +1,16 @@
 .star{
-	background-image:url('rating.png');
-	background-position:left -2px;
+	background-image:url('stars.png');
+	background-position:left top;
 	display:block;
 	width:20px;
-	height:16px;
-	line-height:16px;
+	height:15px;
 	float:left;
 	cursor: pointer;
 	zoom:1;
 }
 
 .fullStar{
-	background-position:left -59px;
+	background-position:left -15px;
 }
 
 .stars{
@@ -19,7 +18,7 @@
 }
 
 .tmp_es{
-	background-position:left -21px;
+	background-position:left -30px;
 }
 
 .tmp_fs{
