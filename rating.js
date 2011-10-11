@@ -7,18 +7,14 @@
 (function($){
 	$.fn.rating = function(uo, callback){
 	    
-	    if (!callback) {
-		    callback = function(){};
-		}
-		
+        callback = callback || function(){};
+
 	    if (typeof uo === 'function') {
 	        callback = uo;
 	    }
 	    
-		if (!uo || typeof uo !== 'object') {
-		    uo = {};
-		}
-		
+        uo = uo || {};
+
 		uo.callback = callback;
 				
 		// each for all item
@@ -149,4 +145,4 @@
 	
 	defaults = {};
 	
-})(jQuery)
+})(jQuery);
