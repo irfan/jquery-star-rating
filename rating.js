@@ -20,11 +20,6 @@
 		// each for all item
 		this.each(function(i, v){
 			
-			// if UserOptions.callback undefined...
-			if (!uo.callback) {
-				uo.callback = function(){};
-			};
-			
 			var options = $.extend({}, defaults, uo);
 			
 			$(v).data('rating', options)
