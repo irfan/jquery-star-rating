@@ -119,6 +119,7 @@
 			e.preventDefault();
 			var el = $(e.target),
 				inputs = $(e.target).parent().parent().children('input'),
+                rate = el.attr('title');
 				
 				matchInput = inputs.filter(function(i){
 					if ($(this).val() == el.attr('title'))
@@ -131,7 +132,7 @@
 			
 			el.parent().parent()
 				.trigger('set.rating', matchInput.val())
-				.data('rating').callback(e);
+				.data('rating').callback(rate, e);
 		}
 	});
 	
