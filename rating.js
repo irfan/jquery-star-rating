@@ -55,9 +55,9 @@
 			$('a', el).live('click', function(e){
 				
 				$(this)
-					.unbind('clickAct.rating')
-					.bind('clickAct.rating', $.fn.rating.clickAct)
-					.trigger('clickAct.rating');
+					.unbind('click.rating')
+					.bind('click.rating', $.fn.rating.click)
+					.trigger('click.rating');
 			});
 			
 		},
@@ -115,7 +115,7 @@
 					.removeClass('tmp_es');
 			});
 		},
-		clickAct: function(e){
+		click: function(e){
 			e.preventDefault();
 			var el = $(e.target),
 				inputs = $(e.target).parent().parent().children('input'),
