@@ -38,11 +38,20 @@
         <h3>JavaScript - Using with callback method</h3>
         <pre>
             &lt;script&gt;
-            $('.container').rating({}, function(event){
-            	// console.log(event);
+            $('.container').rating(function(vote, event){
+            	// console.log(vote, event);
             });
             &lt;/script&gt;
         </pre>
+        <h3>JavaScript - Using with user options and callback method</h3>
+        <pre>
+            &lt;script&gt;
+            $('.container').rating({}, function(vote, event){
+            	// console.log(vote, event);
+            });
+            &lt;/script&gt;
+        </pre>
+
         <h3>Html</h3>
         <pre>
         &lt;div class="container"&gt;
