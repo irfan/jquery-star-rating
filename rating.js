@@ -82,13 +82,13 @@
 			}
 			
 			el
-				.unbind('hoverAct.rating')
-				.bind('hoverAct.rating', $.fn.rating.hoverAct)
-				.trigger('hoverAct.rating', val);
+				.unbind('hover.rating')
+				.bind('hover.rating', $.fn.rating.hover)
+				.trigger('hover.rating', val);
 			
 			return;
 		},
-		hoverAct: function(e, i){
+		hover: function(e, i){
 			//console.log(e, i, this);
 			var el = $(this),
 				stars = $('a', el);
