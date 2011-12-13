@@ -60,7 +60,6 @@
 					.trigger('clickAct.rating');
 			});
 			
-			el.data('rating').callback(e);
 		},
 		set: function(e, val) {
 			//console.log(e, val)
@@ -87,7 +86,6 @@
 				.bind('hoverAct.rating', $.fn.rating.hoverAct)
 				.trigger('hoverAct.rating', val);
 			
-			el.data('rating').callback(e);
 			return;
 		},
 		hoverAct: function(e, i){
@@ -116,7 +114,6 @@
 				$(this).nextAll()
 					.removeClass('tmp_es');
 			});
-			el.data('rating').callback(e);
 		},
 		clickAct: function(e){
 			e.preventDefault();
