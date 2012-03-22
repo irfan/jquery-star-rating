@@ -4,6 +4,15 @@
 How to use 
 --------------------------------------
 
+### Example HTML
+	<div class="container">
+		<input type="radio" name="example" class="rating" value="1" />
+		<input type="radio" name="example" class="rating" value="2" />
+		<input type="radio" name="example" class="rating" value="3" />
+		<input type="radio" name="example" class="rating" value="4" />
+		<input type="radio" name="example" class="rating" value="5" />
+	</div>
+
 ### Simple usage
 	$('.container').rating();
 
@@ -24,11 +33,5 @@ How to use
 		// $.get(document.URL, {vote: vote});
 	});
 
-### Example HTML
-	<div class="container">
-		<input type="radio" name="example" class="rating" value="1" />
-		<input type="radio" name="example" class="rating" value="2" />
-		<input type="radio" name="example" class="rating" value="3" />
-		<input type="radio" name="example" class="rating" value="4" />
-		<input type="radio" name="example" class="rating" value="5" />
-	</div>
+
+
