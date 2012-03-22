@@ -1,6 +1,6 @@
 /*
 *  @Name 		jQuery Rating Plugin
-*  @Version 		0.1.2-beta
+*  @Version 		0.2-beta
 *  @Author 		Irfan Durmus
 *  @Documentation	http://irfandurmus.com/projects/jquery-star-rating-plugin/
 */
