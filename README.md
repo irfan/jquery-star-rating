@@ -2,30 +2,22 @@
 ======================================================================================
 
 How to use 
-____________
-
+--------------------------------------
 
 ### Simple usage
-
 	$('.container').rating();
 
-
 ### Using with callback method and user options
-
 	$('.container').rating(function(vote, event){
 		// console.log(vote, event);
 	});`
 
-
 ### Using with user options
-
 	$('.container').rating({}, function(vote, event){
 		// console.log(vote, event);
 	});
 
-
 ### Using with ajax
-
 	$('.container').rating(function(vote, event){
 		// write your ajax code here
 		// For example;
@@ -40,4 +32,3 @@ ____________
 		<input type="radio" name="example" class="rating" value="4" />
 		<input type="radio" name="example" class="rating" value="5" />
 	</div>
-
