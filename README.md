@@ -1,4 +1,4 @@
-[jQuery Star Rating Plugin](http://irfandurmus.dev/projects/jquery-star-rating-plugin/) 
+[jQuery Star Rating Plugin](http://irfandurmus.com/projects/jquery-star-rating-plugin/) 
 ======================================================================================
 
 How to use 
