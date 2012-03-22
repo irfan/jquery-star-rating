@@ -16,17 +16,17 @@ How to use
 ### Simple usage
 	$('.container').rating();
 
-### Using with callback method and user options
+### Using with callback method 
 	$('.container').rating(function(vote, event){
 		// console.log(vote, event);
 	});`
 
-### Using with user options
+### Using with user options and callback method
 	$('.container').rating({}, function(vote, event){
 		// console.log(vote, event);
 	});
 
-### Using with ajax
+### Example of using ajax
 	$('.container').rating(function(vote, event){
 		// write your ajax code here
 		// For example;
