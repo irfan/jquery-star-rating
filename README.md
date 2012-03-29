@@ -19,11 +19,6 @@ How to use
 ### Using with callback method 
 	$('.container').rating(function(vote, event){
 		// console.log(vote, event);
-	});`
-
-### Using with user options and callback method
-	$('.container').rating({}, function(vote, event){
-		// console.log(vote, event);
 	});
 
 ### Example of using ajax
