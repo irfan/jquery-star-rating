@@ -1,11 +1,20 @@
-/*
-*  @Name        jQuery Rating Plugin
-*  @Version         0.2b
-*  @Author      Irfan Durmus
-*  @Documentation   http://irfandurmus.com/projects/jquery-star-rating-plugin/
-*/
+/* jQuery Star Rating Plugin
+ * 
+ * @Author
+ * Copyright Nov 02 2010, Irfan Durmus - http://irfandurmus.com/
+ *
+ * @Version
+ * 0.2b
+ *
+ * @License
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ *
+ * Visit the plugin page for more information.
+ * http://irfandurmus.com/projects/jquery-star-rating-plugin/
+ *
+ */
 
-(function($){
+;(function($){
     $.fn.rating = function(callback){
         
         callback = callback || function(){};
