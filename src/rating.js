@@ -6,24 +6,14 @@
 */
 
 (function($){
-    $.fn.rating = function(uo, callback){
+    $.fn.rating = function(callback){
         
         callback = callback || function(){};
 
-        if (typeof uo === 'function') {
-            callback = uo;
-        }
-        
-        uo = uo || {};
-
-        uo.callback = callback;
-                
         // each for all item
         this.each(function(i, v){
             
-            var options = $.extend({}, defaults, uo);
-            
-            $(v).data('rating', options)
+            $(v).data('rating', {callback:callback})
                 .unbind('init.rating')
                 .bind('init.rating', $.fn.rating.init)
                 .trigger('init.rating');
@@ -36,9 +26,11 @@
             var el = $(this),
                 list = '',
                 isChecked = null,
-                childs = el.children();
+                childs = el.children(),
+                i = 0,
+                l = childs.length;
             
-            for (var i=0; i < childs.length; i++) {
+            for (; i < l; i++) {
                 list = list + '<a class="star" title="' + $(childs[i]).val() + '" />';
                 if ($(childs[i]).is(':checked')) {
                     isChecked = $(childs[i]).val();
@@ -63,13 +55,14 @@
             
         },
         set: function(e, val) {
-            //console.log(e, val)
-            var el = $(this);
+            var el = $(this),
+                item = $('a', el),
+                input = undefined;
             
             if (val) {
-                el.find('a').removeClass('fullStar');
+                item.removeClass('fullStar');
                 
-                var input = $('a', el).filter(function(i){
+                input = item.filter(function(i){
                     if ($(this).attr('title') == val)
                         return $(this);
                     else
@@ -119,24 +112,23 @@
         click: function(e){
             e.preventDefault();
             var el = $(e.target),
-                inputs = $(e.target).parent().parent().children('input'),
+                container = el.parent().parent(),
+                inputs = container.children('input'),
                 rate = el.attr('title');
                 
-                matchInput = inputs.filter(function(i){
-                    if ($(this).val() == el.attr('title'))
-                        return true;
-                    else
-                        return false;
-                });
+            matchInput = inputs.filter(function(i){
+                if ($(this).val() == rate)
+                    return true;
+                else
+                    return false;
+            });
             
             matchInput.attr('checked', true);
             
-            el.parent().parent()
+            container
                 .trigger('set.rating', matchInput.val())
                 .data('rating').callback(rate, e);
         }
     });
-    
-    defaults = {};
     
 })(jQuery);
