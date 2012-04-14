@@ -23,15 +23,15 @@
         this.each(function(i, v){
             
             $(v).data('rating', {callback:callback})
-                .unbind('init.rating')
                 .bind('init.rating', $.fn.rating.init)
+                .bind('set.rating', $.fn.rating.set)
+                .bind('hover.rating', $.fn.rating.hover)
                 .trigger('init.rating');
         });
     };
     
     $.extend($.fn.rating, {
         init: function(e){
-            
             var el = $(this),
                 list = '',
                 isChecked = null,
@@ -50,18 +50,10 @@
             
             el
                 .append('<div class="stars">' + list + '</div>')
-                .unbind('set.rating')
-                .bind('set.rating', $.fn.rating.set)
                 .trigger('set.rating', isChecked);
             
-            $('a', el).live('click', function(e){
-                
-                $(this)
-                    .unbind('click.rating')
-                    .bind('click.rating', $.fn.rating.click)
-                    .trigger('click.rating');
-            });
-            
+            $('a', el).live('click', $.fn.rating.click);            
+            el.trigger('hover.rating');
         },
         set: function(e, val) {
             var el = $(this),
@@ -84,15 +76,9 @@
                     .addClass('fullStar');
             }
             
-            el
-                .unbind('hover.rating')
-                .bind('hover.rating', $.fn.rating.hover)
-                .trigger('hover.rating', val);
-            
             return;
         },
-        hover: function(e, i){
-            //console.log(e, i, this);
+        hover: function(e){
             var el = $(this),
                 stars = $('a', el);
             
