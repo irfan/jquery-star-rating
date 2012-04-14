@@ -4,7 +4,7 @@
  * Copyright Nov 02 2010, Irfan Durmus - http://irfandurmus.com/
  *
  * @Version
- * 0.2b
+ * 0.3b
  *
  * @License
  * Dual licensed under the MIT or GPL Version 2 licenses.
