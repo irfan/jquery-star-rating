@@ -82,7 +82,7 @@
             var el = $(this),
                 stars = $('a', el);
             
-            stars.live('mouseenter', function(e){
+            stars.bind('mouseenter', function(e){
                 // add tmp class when mouse enter
                 $(this)
                     .addClass('tmp_fs')
@@ -93,7 +93,7 @@
                     .addClass('tmp_es');
             });
             
-            stars.live('mouseleave', function(e){
+            stars.bind('mouseleave', function(e){
                 // remove all tmp class when mouse leave
                 $(this)
                     .removeClass('tmp_fs')
