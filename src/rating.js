@@ -52,7 +52,7 @@
                 .append('<div class="stars">' + list + '</div>')
                 .trigger('set.rating', isChecked);
             
-            $('a', el).live('click', $.fn.rating.click);            
+            $('a', el).bind('click', $.fn.rating.click);            
             el.trigger('hover.rating');
         },
         set: function(e, val) {
