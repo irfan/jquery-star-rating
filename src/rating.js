@@ -122,7 +122,7 @@
 
             container
                 .trigger('set.rating', matchInput.val())
-                .data('rating').callback(rate, e);
+                .data('rating').callback(rate, e, el.parent().parent());
         }
     });
 
