@@ -3,6 +3,7 @@
 
 How to use 
 --------------------------------------
+Detailed [documentation](http://irfandurmus.com/projects/jquery-star-rating-plugin/) and working [demo here](http://irfandurmus.com/projects/jquery-star-rating-plugin/).
 
 ### Example HTML
     <div class="container">
