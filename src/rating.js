@@ -118,7 +118,9 @@
                     return false;
             });
             
-            matchInput.attr('checked', true);
+            matchInput
+                .attr('checked', true)
+				.siblings('input').attr('checked', false);
             
             container
                 .trigger('set.rating', matchInput.val())
