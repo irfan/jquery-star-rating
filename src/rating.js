@@ -40,7 +40,11 @@
                 l = childs.length;
             
             for (; i < l; i++) {
-                list = list + '<a class="star" title="' + $(childs[i]).val() + '" />';
+            	if($(childs[i]).attr('disabled') == 'disabled'){
+			list = list + '<a class="star" title="' + $(childs[i]).val() + '" disabled="disabled" />';
+		}else{
+			list = list + '<a class="star" title="' + $(childs[i]).val() + '" />';
+		}
                 if ($(childs[i]).is(':checked')) {
                     isChecked = $(childs[i]).val();
                 };
@@ -84,47 +88,55 @@
             
             stars.bind('mouseenter', function(e){
                 // add tmp class when mouse enter
-                $(this)
-                    .addClass('tmp_fs')
-                    .prevAll()
-                    .addClass('tmp_fs');
-                
-                $(this).nextAll()
-                    .addClass('tmp_es');
+                if(!$(this).attr("disabled")){
+	                $(this)
+	                    .addClass('tmp_fs')
+	                    .prevAll()
+	                    .addClass('tmp_fs');
+	                
+	                $(this).nextAll()
+	                    .addClass('tmp_es');
+                }
             });
             
             stars.bind('mouseleave', function(e){
                 // remove all tmp class when mouse leave
-                $(this)
-                    .removeClass('tmp_fs')
-                    .prevAll()
-                    .removeClass('tmp_fs');
-                
-                $(this).nextAll()
-                    .removeClass('tmp_es');
+                if(!$(this).attr("disabled")){
+	                $(this)
+	                    .removeClass('tmp_fs')
+	                    .prevAll()
+	                    .removeClass('tmp_fs');
+	                
+	                $(this).nextAll()
+	                    .removeClass('tmp_es');
+                }
             });
         },
         click: function(e){
-            e.preventDefault();
-            var el = $(e.target),
-                container = el.parent().parent(),
-                inputs = container.children('input'),
-                rate = el.attr('title');
-                
-            matchInput = inputs.filter(function(i){
-                if ($(this).val() == rate)
-                    return true;
-                else
-                    return false;
-            });
-            
-            matchInput
-                .attr('checked', true)
-				.siblings('input').attr('checked', false);
-            
-            container
-                .trigger('set.rating', matchInput.val())
-                .data('rating').callback(rate, e);
+        	var elem = $(this),
+		stars = $('a', elem);
+		if(!$(this).attr("disabled")){
+	            e.preventDefault();
+	            var el = $(e.target),
+	                container = el.parent().parent(),
+	                inputs = container.children('input'),
+	                rate = el.attr('title');
+	                
+	            matchInput = inputs.filter(function(i){
+	                if ($(this).val() == rate)
+	                    return true;
+	                else
+	                    return false;
+	            });
+	            
+	            matchInput
+	                .attr('checked', true)
+					.siblings('input').attr('checked', false);
+	            
+	            container
+	                .trigger('set.rating', matchInput.val())
+	                .data('rating').callback(rate, e);
+		}
         }
     });
     
