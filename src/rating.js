@@ -119,8 +119,8 @@
             });
             
             matchInput
-                .attr('checked', true)
-				.siblings('input').attr('checked', false);
+                .prop('checked', true)
+				.siblings('input').prop('checked', false);
             
             container
                 .trigger('set.rating', matchInput.val())
